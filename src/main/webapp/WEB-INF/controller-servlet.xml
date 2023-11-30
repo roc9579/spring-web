@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!--    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"></bean>-->
+
+    <!--    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"></bean>-->
+
+    <!--    <bean id="/sayHello" class="controller.HelloController">-->
+    <!--        <property name="viewName" value="hello"></property>-->
+    <!--    </bean>-->
+
+    <!--    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
+    <!--        <property name="prefix" value="/WEB-INF/pages/"></property>-->
+    <!--        <property name="suffix" value=".jsp"></property>-->
+    <!--        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>-->
+    <!--    </bean>-->
+
+
+    <mvc:annotation-driven></mvc:annotation-driven>
+
+    <context:component-scan base-package="controller"></context:component-scan>
+
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/pages/"></property>
+        <property name="suffix" value=".jsp"></property>
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
+    </bean>
+
+
+    <mvc:view-controller path="/showLogin" view-name="login"></mvc:view-controller>
+    <mvc:view-controller path="/showSuccess" view-name="success"></mvc:view-controller>
+
+</beans>
